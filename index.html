@@ -2,9 +2,29 @@
 <html>
 <head>
     <title>野火检测研究</title>
+    <!-- 引入微博JS SDK -->
+    <script src="https://lib.sinaapp.com/js/sinaweibo.js"></script>
 </head>
 <body>
     <h1>野火检测研究应用</h1>
     <p>本页面用于微博开放平台应用地址验证。</p>
+    
+    <!-- 微博登录按钮容器 -->
+    <div id="wb_login"></div>
+    
+    <script>
+    // 初始化并渲染登录按钮
+    WB2.anyWhere(function(W){
+        W.widget.login({
+            container: "wb_login", // 对应上面的div id
+            type: "button",        // 按钮样式
+            width: 200,            // 按钮宽度
+            height: 30,            // 按钮高度
+            callback: function() { // 登录成功回调（可选，简单提示即可）
+                alert("微博登录成功～");
+            }
+        });
+    });
+    </script>
 </body>
 </html>
